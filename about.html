@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieStream</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<body>
+
+    <header>
+        <div class="logo">MEGAMOVIE</div>
+        <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#filterable-movies">Featured</a></li>
+              <li><a href="#theaters">Theaters</a></li>
+              <li><a href="#full-movies">Movies</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <span>SMHA Design</span>
+            <button onclick="window.open('https://hasnainabdi.github.io/InternIntelligence-Potfolio/', '_blank')">Load more</button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h1>About MovieStream</h1>
+        <p>
+            Welcome to MovieStream, your ultimate destination for exploring and enjoying movies from various genres. 
+            My name is <strong>Muhammad Hasnain</strong>, and I developed this platform to make it easy for you to discover new movies, 
+            filter them by tags, and enjoy a seamless browsing experience. Whether you're a fan of action, horror, or Hollywood blockbusters, 
+            MovieStream has something for everyone.
+        </p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <h2>My Mission</h2>
+        <p>
+            My mission is to provide a user-friendly platform where movie enthusiasts can easily find and explore their favorite content. 
+            I aim to deliver a high-quality, interactive, and enjoyable experience for all users. MovieStream is a reflection of my passion 
+            for web development and creating meaningful projects.
+        </p>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-me-section">
+        <h2>About Me</h2>
+        <div class="about-me-card">
+            <img src="/assets/herro.png" alt="Syed Muhammad Hasnain Abdi">
+            <h3>Muhammad Hasnain</h3>
+            <p>Frontend Web Developer | Pakistan, Karachi</p>
+            <p>
+                I am a passionate web developer with expertise in HTML, CSS, JavaScript, and modern web technologies. 
+                MovieStream is one of my projects that showcases my skills and creativity. I enjoy building user-friendly 
+                and visually appealing websites that solve real-world problems.
+            </p>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 MegaMovie. All rights reserved.</p>
+  </footer>
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.tag');
+      const movieCards = document.querySelectorAll('.movie-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          movieCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-tags').includes(filter)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Search Functionality
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        movieCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>

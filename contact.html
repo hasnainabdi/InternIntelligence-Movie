@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieStream</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<body>
+
+    <header>
+        <div class="logo">MEGAMOVIE</div>
+        <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#filterable-movies">Featured</a></li>
+              <li><a href="#theaters">Theaters</a></li>
+              <li><a href="#full-movies">Movies</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <span>SMHA Design</span>
+            <button onclick="window.open('https://hasnainabdi.github.io/InternIntelligence-Potfolio/', '_blank')">Load more</button>
+        </div>
+    </header>
+
+        <!-- Contact Us Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <!-- Left Side: Contact Information -->
+                <div class="contact-info">
+                    <h1>Contact Us</h1>
+                    <p>Any questions or remarks about movies? Just write us a message!</p>
+                    <div class="info-details">
+                        <p><strong>Phone:</strong> +0123 4567 8910</p>
+                        <p><strong>Email:</strong> m.hasnainreactions@gmail.com</p>
+                        <p><strong>Address:</strong> 102 Street 2714 Don</p>
+                    </div>
+                </div>
+    
+                <!-- Right Side: Movie-Related Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" action="https://formspree.io/f/m.hasnainreactions@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="movieType">What type of movie are you interested in?</label>
+                            <select id="movieType" name="movieType" required>
+                                <option value="action">Action</option>
+                                <option value="horror">Horror</option>
+                                <option value="comedy">Comedy</option>
+                                <option value="drama">Drama</option>
+                                <option value="sci-fi">Sci-Fi</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>    
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 MegaMovie. All rights reserved.</p>
+  </footer>
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.tag');
+      const movieCards = document.querySelectorAll('.movie-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          movieCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-tags').includes(filter)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Search Functionality
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        movieCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>

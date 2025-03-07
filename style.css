@@ -1,0 +1,1113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E50914;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu span {
+    margin-right: 15px;
+}
+
+.user-menu button {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 50px; /* Position below the avatar */
+    right: 0; /* Align to the right */
+    background-color: #1a1a1a; /* Dark background */
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    z-index: 1001; /* Above other content */
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #e50914; /* Red background on hover */
+  }
+  
+  /* Show dropdown on hover */
+  .user-profile:hover .dropdown-menu {
+    display: block; /* Show dropdown */
+  }
+
+  /* Tags and Filters */
+  .filter-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter-options {
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button.active {
+    background-color: #e50914;
+    color: white;
+}
+
+.filter-button:hover {
+    background-color: #e50914;
+    color: white;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.content-item:hover {
+    transform: scale(1.05);
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-item {
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+#tags-filters {
+    padding: 40px 20px;
+    background-color: #111;
+    text-align: center;
+  }
+  
+  #tags-filters h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e50914;
+  }
+  
+  .tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .tags button {
+    padding: 8px 16px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .tags button.active {
+    background-color: #b2070a;
+  }
+  
+  .tags button:hover {
+    background-color: #b2070a;
+  }
+  
+  /* Filterable Movie Grid */
+  #filterable-movies {
+    padding: 40px 20px;
+    background-color: #111;
+    text-align: center;
+  }
+  
+  #filterable-movies h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e50914;
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .movie-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .movie-card h3 {
+    font-size: 18px;
+    padding: 15px;
+    color: #fff;
+  }
+  
+  .movie-card p {
+    font-size: 14px;
+    color: #888;
+    padding: 0 15px 15px;
+  }
+
+  /* Sign In Button */
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sign-in {
+    padding: 8px 12px;
+    background-color: #e50914; /* Red button */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .sign-in:hover {
+    background-color: #b2070a; /* Darker red on hover */
+  }
+  
+  /* Logo */
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914; /* Red color for the logo */
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+  
+  .logo a:hover {
+    color: #b2070a; /* Darker red on hover */
+  }
+
+  /* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0; /* Remove default margin */
+  }
+  
+  .nav-links li {
+    margin: 0 15px; /* Spacing between links */
+  }
+  
+  .nav-links a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #e50914; /* Red color on hover */
+  }
+  
+  /* Right Section (Search Bar and Sign In Button) */
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between search bar and sign-in button */
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border: 1px solid #fff; /* White border */
+    border-radius: 4px;
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text */
+    font-size: 14px;
+    margin-right: 10px; /* Spacing between input and button */
+  }
+  
+  .search-bar input::placeholder {
+    color: #888; /* Light gray placeholder text */
+  }
+  
+  .search-bar button {
+    padding: 8px 12px;
+    background-color: #e50914; /* Red button */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* White text */
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #b2070a; /* Darker red on hover */
+  }
+  
+  /* Sign In Button */
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sign-in {
+    padding: 8px 12px;
+    background-color: #e50914; /* Red button */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .sign-in:hover {
+    background-color: #b2070a; /* Darker red on hover */
+  }
+  
+
+  /* Hero Section with Video Background */
+.hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  #hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the entire hero section */
+    z-index: 1; /* Place video behind the content */
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the video */
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .watch-free {
+    padding: 12px 24px;
+    background-color: #e50914;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .watch-free:hover {
+    background-color: #b2070a;
+  }
+
+  /* Featured Movies */
+  .featured-movies {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  /* Coming Soon Section */
+.coming-soon {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .coming-soon h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #e50914;
+  }
+  
+  .trailers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .trailer-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .trailer-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }  
+  
+  .release-date {
+    font-size: 14px;
+    color: #e50914;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .trailer-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .get-tickets {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #e50914;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .get-tickets:hover {
+    background-color: #b2070a;
+  }
+  
+  .featured-movies h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .movie-card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+/* Theaters Section */
+#theaters {
+    padding: 60px 20px; /* Padding for spacing */
+    background-color: #111; /* Dark background for contrast */
+    text-align: center; /* Center-align the content */
+  }
+  
+  #theaters h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e50914; /* Red color for the heading */
+  }
+  
+  #theaters p {
+    font-size: 18px;
+    color: #fff; /* White text for the description */
+    margin-bottom: 40px;
+  }
+  
+  /* Theater Grid */
+  .theater-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between cards */
+    padding: 0 20px; /* Padding for the grid */
+  }
+  
+  /* Theater Card */
+  .theater-card {
+    background-color: #1a1a1a; /* Dark card background */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within the card */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    text-align: center; /* Center-align card content */
+  }
+  
+  .theater-card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6); /* Glowing red shadow on hover */
+  }
+  
+  .theater-card img {
+    width: 100%; /* Ensure the image covers the card width */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+  
+  .theater-card h3 {
+    font-size: 18px;
+    padding: 15px;
+    color: #fff; /* White text for the movie title */
+  }
+  
+  /* Ticket Button */
+  .ticket-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914; /* Red button */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 10px 0;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .ticket-button:hover {
+    background-color: #b2070a; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }
+
+/* Full Movies Section */
+#full-movies {
+    padding: 60px 20px; /* Padding for spacing */
+    background-color: #111; /* Dark background for contrast */
+    text-align: center; /* Center-align the content */
+  }
+  
+  #full-movies h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e50914; /* Red color for the heading */
+  }
+  
+  #full-movies p {
+    font-size: 18px;
+    color: #fff; /* White text for the description */
+    margin-bottom: 40px;
+  }
+  
+  /* Movie Grid */
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between cards */
+    padding: 0 20px; /* Padding for the grid */
+  }
+  
+  /* Movie Card */
+  .movie-card {
+    background-color: #1a1a1a; /* Dark card background */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within the card */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    text-align: center; /* Center-align card content */
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.6); /* Glowing red shadow on hover */
+  }
+  
+  .movie-card img {
+    width: 100%; /* Ensure the image covers the card width */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+  
+  .movie-card h3 {
+    font-size: 18px;
+    padding: 15px;
+    color: #fff; /* White text for the movie title */
+  }
+  
+  /* Watch Now Button */
+  .watch-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914; /* Red button */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 10px 0;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .watch-button:hover {
+    background-color: #b2070a; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }  
+ 
+/* Full Movies Section */
+#full-movies {
+    padding: 60px 20px; /* Padding for spacing */
+    background-color: #111; /* Dark background for contrast */
+    text-align: center; /* Center-align the content */
+  }
+  
+  #full-movies h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e50914; /* Red color for the heading */
+  }
+  
+  #full-movies p {
+    font-size: 18px;
+    color: #fff; /* White text for the description */
+    margin-bottom: 40px;
+  }
+  
+  /* Slider Container */
+  .slider {
+    width: 100%;
+    padding: 20px 0; /* Padding for the slider */
+    position: relative; /* Ensure navigation buttons are positioned correctly */
+  }
+  
+  /* Slider Wrapper */
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth slide transition */
+  }
+  
+  /* Slider Slide */
+  .slide {
+    flex: 0 0 100%; /* Each slide takes full width by default */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide img {
+    width: 100%; /* Ensure the image covers the slide width */
+    height: 400px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  /* Slider Navigation Buttons */
+  .slider-button-next,
+  .slider-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(229, 9, 20, 0.7); /* Semi-transparent red background */
+    color: #fff; /* White color for arrows */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above the slides */
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider-button-next:hover,
+  .slider-button-prev:hover {
+    background-color: rgba(229, 9, 20, 1); /* Solid red on hover */
+  }
+  
+  .slider-button-next {
+    right: 20px; /* Position next button on the right */
+  }
+  
+  .slider-button-prev {
+    left: 20px; /* Position previous button on the left */
+  }
+  
+  /* Slider Pagination */
+  .slider-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Spacing between pagination bullets */
+    z-index: 10; /* Ensure pagination is above the slides */
+  }
+  
+  .slider-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #fff; /* White color for bullets */
+    border-radius: 50%;
+    opacity: 0.5; /* Semi-transparent by default */
+    cursor: pointer;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .slider-pagination .swiper-pagination-bullet-active {
+    opacity: 1; /* Fully visible for the active bullet */
+    background-color: #e50914; /* Red color for the active bullet */
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    font-size: 24px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+  }
+
+ /* About Page Styles */
+body {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  font-family: Arial, sans-serif;
+}
+
+.about-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #111; /* Dark gray for contrast */
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  color: #ff0000; /* Red color for headings */
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  color: #ddd; /* Light gray for text */
+  max-width: 800px;
+  margin: 0 auto 30px;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.mission-section {
+  background-color: #222; /* Darker gray for contrast */
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.mission-section h2 {
+  font-size: 2rem;
+  color: #ff0000; /* Red color for headings */
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.mission-section p {
+  font-size: 1.1rem;
+  color: #ddd; /* Light gray for text */
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.about-me-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #111; /* Dark gray for contrast */
+}
+
+.about-me-section h2 {
+  font-size: 2rem;
+  color: #ff0000; /* Red color for headings */
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.about-me-card {
+  background-color: #222; /* Darker gray for contrast */
+  border: 1px solid #444; /* Gray border */
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Red shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-me-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.3); /* Red shadow on hover */
+}
+
+.about-me-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #ff0000; /* Red border for profile picture */
+}
+
+.about-me-card h3 {
+  font-size: 1.5rem;
+  color: #ff0000; /* Red color for headings */
+  margin-bottom: 10px;
+}
+
+.about-me-card p {
+  font-size: 1rem;
+  color: #ddd; /* Light gray for text */
+  margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.contact-section {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.contact-container {
+  display: flex;
+  background-color: #111; /* Dark gray for contrast */
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Red shadow */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-info {
+  flex: 1;
+  padding: 40px;
+  background-color: #222; /* Darker gray for contrast */
+  color: #fff;
+}
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  color: #ff0000; /* Red color for headings */
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: #ddd; /* Light gray for text */
+  margin-bottom: 20px;
+}
+
+.info-details p {
+  font-size: 1rem;
+  color: #ddd; /* Light gray for text */
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  flex: 1;
+  padding: 40px;
+  background-color: #111; /* Dark gray for contrast */
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  color: #ff0000; /* Red color for headings */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #ddd; /* Light gray for text */
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444; /* Gray border */
+  border-radius: 5px;
+  background-color: #222; /* Darker gray for input fields */
+  color: #fff; /* White text */
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #ff0000; /* Red button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    border-top: 2px solid #e50914;
+    margin-top: 40px;
+  }
+  
+  footer p {
+    font-size: 14px;
+    color: #888;
+  }
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-bottom: 2px solid red;
+}
+
+.quick-links, .social-media {
+    margin: 10px;
+}
+
+.quick-links h3, .social-media h3 {
+    color: red; /* Red Headings */
+    margin-bottom: 10px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links ul li {
+    margin: 8px 0;
+}
+
+.quick-links ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.quick-links ul li a:hover {
+    color: red;
+}
+
+.social-media a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: red;
+}
+
+footer p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide nav links on smaller screens */
+    }
+  
+    .hero h1 {
+      font-size: 36px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .movie-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .categories {
+      display: none; /* Hide categories on smaller screens */
+    }
+  
+    .auth-buttons {
+      margin-left: auto; /* Push auth buttons to the right */
+    }
+  }

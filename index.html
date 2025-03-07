@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieStream</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<body>
+
+    <header>
+        <div class="logo">MEGAMOVIE</div>
+        <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#filterable-movies">Featured</a></li>
+              <li><a href="#theaters">Theaters</a></li>
+              <li><a href="#full-movies">Movies</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <span>SMHA Design</span>
+            <button onclick="window.open('https://hasnainabdi.github.io/InternIntelligence-Potfolio/', '_blank')">Load more</button>
+        </div>
+    </header>
+    <!-- Back to Top Arrow -->
+    <a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+  <!-- Hero Section with Video Background -->
+  <section class="hero">
+    <video autoplay muted loop id="hero-video">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Free Movies to Watch, Anytime Anywhere.</h1>
+      <p>The search is over! Let MovieStream help you find the perfect movie to watch tonight for free.</p>
+      <a href="#full-movies" class="watch-free">Watch Free</a>
+    </div>
+  </section>
+
+    <!-- Tags and Filters -->
+    <section id="tags-filters" class="section">
+        <h2>Filter by Tags</h2>
+        <div class="tags">
+          <button class="tag active" data-filter="all">All</button>
+          <button class="tag" data-filter="action">Action</button>
+          <button class="tag" data-filter="movies">Movies</button>
+          <button class="tag" data-filter="hollywood">Hollywood</button>
+          <button class="tag" data-filter="horror">Horror</button>
+        </div>
+      </section>
+    
+
+  <!-- Featured Movies -->
+  <section id="filterable-movies" class="section">
+    <h2>Featured Movies</h2>
+    <p>Explore our handpicked selection of featured movies.</p><br>
+    <div class="movie-grid">
+       
+        <!-- Movie 1 -->
+        <div class="movie-card" data-tags="action hollywood">
+            <img src="/assets/featured/titanic.jpg" alt="Featured Movie 1">
+        <h3>Titanic 2: The Return of the Legendary Ship</h3>
+      </div>
+
+        <!-- Movie 2 -->
+      <div class="movie-card" data-tags="action hollywood movies">
+        <img src="/assets/featured/joker.jpg" alt="Featured Movie 2">
+        <h3>Joker: Folie à Deux – The Madness Continues</h3>
+      </div>
+
+        <!-- Movie 3 -->
+      <div class="movie-card" data-tags="action hollywood movies">
+        <img src="/assets/featured/secretwar.jpg" alt="Featured Movie 3">
+        <h3>Avengers: Secret Wars – The Ultimate Battle Begins</h3>
+      </div>
+
+      <!-- Movie 4 -->
+      <div class="movie-card" data-tags="action hollywood">
+        <img src="/assets/featured/PARADISE.jpg" alt="Movie 4">
+        <h3>The Paradise</h3>
+      </div>
+
+      <!-- Movie 5 -->
+      <div class="movie-card" data-tags="sci-fi hollywood">
+        <img src="/assets/featured/REACHER.webp" alt="Movie 5">
+        <h3>Reacher</h3>
+      </div>
+      
+    <!-- Movie 6 -->
+      <div class="movie-card" data-tags="action horror hollywood">
+        <img src="/assets/featured/th (3).jpg" alt="28 Year Later">
+    <h3>28 Year Later</h3>
+  </div>
+
+    <!-- Movie 7 -->
+  <div class="movie-card" data-tags="action hollywood movies">
+    <img src="/assets/featured/secretwar.jpg" alt="Secret War">
+    <h3>Secret War</h3>
+  </div>
+
+    <!-- Movie 8 -->
+  <div class="movie-card" data-tags="action hollywood movies">
+    <img src="/assets/featured/Severance.jpg" alt="Severance">
+    <h3>Severance</h3>
+  </div>
+
+  <!-- Movie 9 -->
+  <div class="movie-card" data-tags="action movies hollywood">
+    <img src="/assets/featured/th(5).jpg" alt="Mickey 17">
+    <h3>Mickey 17</h3>
+  </div>
+
+  <!-- Movie 10 -->
+  <div class="movie-card" data-tags="action movies hollywood">
+    <img src="/assets/featured/th.jpg" alt="Captain America">
+    <h3>Captain America</h3>
+  </div>
+</div>
+</section>
+
+<!-- Theaters Section -->
+<section id="theaters" class="section">
+    <h2>Theaters</h2>
+    <div class="theater-grid">
+      <!-- Theater Movie 1 -->
+      <div class="theater-card">
+        <img src="/assets/ticket/Mufasa The Lion King.jpg" alt="Mufasa: The Lion King">
+        <h3>Mufasa: The Lion King</h3>
+        <a href="https://www.easytickets.pk/detail/index/6LE3q" target="_blank" class="ticket-button">Ticket</a>
+      </div>
+  
+      <!-- Theater Movie 2 -->
+      <div class="theater-card" style="animation: fadeIn 1s ease-in-out;">
+        <img src="/assets/ticket/Captain America Brave New World.jpg" alt="Captain America: Brave New World">
+        <h3>Captain America: Brave New World</h3>
+        <a href="https://www.easytickets.pk/detail/index/6LE4w" target="_blank" class="ticket-button">Ticket</a>
+      </div>
+  
+      <!-- Theater Movie 3 -->
+      <div class="theater-card">
+        <img src="/assets/ticket/Siccin 7.jpg" alt="Siccin 7">
+        <h3>Siccin 7</h3>
+        <a href="https://www.easytickets.pk/detail/index/6LE16" target="_blank" class="ticket-button">Ticket</a>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- Full Movies Section -->
+<section id="full-movies" class="section">
+    <h2>Full Movies</h2>
+    <p>Watch full-length movies anytime, anywhere.</p>
+    <div class="movie-grid">
+      <!-- Full Movie 1 -->
+      <div class="movie-card">
+        <img src="/assets/featured/conjuring2.jpg" alt="Conjuring 2">
+        <h3>Conjuring 2 Full Movie</h3>
+        <a href="/assets/video/Trailer/conjuring 2.mp4" target="_blank" class="watch-button">Watch Now</a>
+      </div>
+  
+      <!-- Full Movie 2 -->
+      <div class="movie-card">
+        <img src="/assets/featured/CURIE.jpg" alt="Marie Curie Full Movie">
+        <h3>Marie Curie Full Movie</h3>
+        <a href="/assets/video/Trailer/Marie Curie.mp4" target="_blank" class="watch-button">Watch Now</a>
+      </div>
+  
+      <!-- Full Movie 3 -->
+      <div class="movie-card">
+        <img src="/assets/featured/PARADISE.jpg" alt="Paradise Full Movie">
+        <h3>Paradise Full Movie</h3>
+        <a href="/assets/video/Trailer/paradise.mp4" target="_blank" class="watch-button">Watch Now</a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MegaMovie. All rights reserved.</p>
+  </footer>
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.tag');
+      const movieCards = document.querySelectorAll('.movie-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          movieCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-tags').includes(filter)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Search Functionality
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        movieCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    // Back to Top Button Functionality
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
